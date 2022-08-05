@@ -18,21 +18,32 @@ const Drawer = createDrawerNavigator();
 function DrawerNavigator() {
     return (
         <Drawer.Navigator drawerContent={(props) => <CustomDrawer {...props} />} screenOptions={{
-            // marginLeft: -30,
+            marginLeft: -30,
             drawerActiveBackgroundColor: "#F1F6F9",
             drawrrActiveTintColor: "#0000",
             fontFamily: "Roboto-Medium",
             fontSize: 15,
-            headerShown: false,
         }}>
+            <Drawer.Screen name="User Account" component={UserAccount} options={{
+                title: 'User Account',
+                headerStyle: {
+                    backgroundColor: '#FBFBFB',
+                },
+                headerTintColor: '#003314',
+                alignItems: "center",
+                headerTitleStyle: {
+                    fontSize: 20,
+                    color: "#001314",
+                   
+                },
+            }} />
             <Drawer.Screen name="Main" component={Main} />
-            <Drawer.Screen name="UserAccount" component={UserAccount} />
             <Drawer.Screen name="Company" component={Company} />
             <Drawer.Screen name="Logo" component={Logo} />
-            <Drawer.Screen name="CompanyInformation" component={CompanyInformation} />
+            <Drawer.Screen name="Company Information" component={CompanyInformation} />
             <Drawer.Screen name="Signature" component={Signature} />
-            <Drawer.Screen name="PaymentInstruction" component={PaymentInstruction} />
-            <Drawer.Screen name="CustomerPayment" component={CustomerPayment} />
+            <Drawer.Screen name="Payment Instruction" component={PaymentInstruction} />
+            <Drawer.Screen name="Customer Payment" component={CustomerPayment} />
         </Drawer.Navigator>
     );
 }
