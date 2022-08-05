@@ -34,7 +34,7 @@ function Signup({ navigation }) {
                     autoCapitalize="none"
                     secureTextEntry />
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('Login')}
                 >
                     <View style={styles.loginbutton}>
                         <Text style={styles.logintext}>
@@ -42,13 +42,18 @@ function Signup({ navigation }) {
                         </Text>
                     </View>
                 </TouchableWithoutFeedback>
+                <Captiontwo title="OR CONTINUE WITH" />
+                <Image
+                    style={styles.icon}
+                    source={require('../Images/icon-01.png')}
+                />
                 <View style={styles.direction} >
-                    <Captiontwo title="Don’t have an account?" />
+                    <Captiontwo title="Already have an account?" />
                     <TouchableWithoutFeedback
-                        onPress={() => navigation.navigate('Signup')}
+                        onPress={() => navigation.navigate('Login')}
                     >
                         <View>
-                            <Captiontwo title="SignUp" />
+                            <Captiontwo title="LogIn" />
                         </View>
                     </TouchableWithoutFeedback>
                 </View>
@@ -71,6 +76,12 @@ const styles = StyleSheet.create({
         height: 250,
         marginBottom: 50,
         marginTop: 30,
+    },
+    icon: {
+        width: 243,
+        height: 34,
+        marginBottom: 20,
+        marginTop: 20,
     },
     heading: {
         margin: 10,
