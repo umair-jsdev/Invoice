@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { Card, Divider } from 'react-native-paper';
-import CardHeading from '../Components/CardHeading';
 import Input from '../Components/Input';
 
 

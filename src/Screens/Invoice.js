@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, ScrollView, View, Switch, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Switch, Image, TouchableWithoutFeedback } from 'react-native';
 import SwitchSelector from "react-native-switch-selector";
 import { Card, Divider } from 'react-native-paper';
 import Heading from "../Components/Heading";
 
 
 
-const CustomerPayment = () => {
+const Invoice = ({navigation}) => {
     const [show, setShow] = useState(false);
     return (
         <View style={styles.contanier}>
@@ -36,28 +36,132 @@ const CustomerPayment = () => {
                 </Card.Content>
             </Card>
             <View >
-                {show !== true ? <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20 }}>
-                    <Card.Content>
-                        <Image
-                            style={styles.logo}
-                            source={require('../Images/img-02.png')}
-                        />
-                        {/* <Text style={{
-                            fontSize: 14,
-                            color: "#5C5C5C",
-                            fontFamily: "Roboto-Medium",
-                            fontWeight: "bold",
-                            marginLeft: 5
-                        }}
-                        >Business Number
-                        </Text> */}
-                    </Card.Content>
-                </Card> : <Text>Hello</Text>}
+                {show !== true ?
+                    <View>
+                        <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20, elevation: 5 }}>
+                            <Card.Title
+                                left={(props) => <Image
+                                    {...props}
+                                    style={styles.logo}
+                                    source={require('../Images/cardimg-01.png')}
+                                />}
+                                right={(props) => <TouchableWithoutFeedback
+                                    {...props}
+                                onPress={() => navigation.navigate('Setting')}
+                                >
+                                    <View style={styles.button}>
+                                        <Text style={styles.text}>
+                                            Logo & Business Settings
+                                        </Text>
+                                    </View>
+                                </TouchableWithoutFeedback>}
+                            />
+                        </Card>
+                        <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20, elevation: 5 }}>
+                            <Card.Title
+                                left={(props) => <Image
+                                    {...props}
+                                    style={styles.logo}
+                                    source={require('../Images/cardimg-02.png')}
+                                />}
+                                right={(props) => <TouchableWithoutFeedback
+                                    {...props}
+                                // onPress={() => navigation.navigate('ForgetPassword')}
+                                >
+                                    <View style={styles.button1}>
+                                        <Text style={styles.text1}>
+                                            Tutorial Videos
+                                        </Text>
+                                    </View>
+                                </TouchableWithoutFeedback>}
+                            />
+                        </Card>
+                        <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20, elevation: 5 }}>
+                            <Card.Title
+                                left={(props) => <Image
+                                    {...props}
+                                    style={styles.logo}
+                                    source={require('../Images/cardimg-03.png')}
+                                />}
+                                right={(props) => <TouchableWithoutFeedback
+                                    {...props}
+                                // onPress={() => navigation.navigate('ForgetPassword')}
+                                >
+                                    <View style={styles.button2}>
+                                        <Text style={styles.text2}>
+                                            Support
+                                        </Text>
+                                    </View>
+                                </TouchableWithoutFeedback>}
+                            />
+                        </Card>
+                    </View>
+
+                    :
+                    <View>
+                        <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20, elevation: 5 }}>
+                            <Card.Title
+                                left={(props) => <Image
+                                    {...props}
+                                    style={styles.logo}
+                                    source={require('../Images/cardimg-01.png')}
+                                />}
+                                right={(props) => <TouchableWithoutFeedback
+                                    {...props}
+                                // onPress={() => navigation.navigate('ForgetPassword')}
+                                >
+                                    <View style={styles.button}>
+                                        <Text style={styles.text}>
+                                            Logo & Business Settings
+                                        </Text>
+                                    </View>
+                                </TouchableWithoutFeedback>}
+                            />
+                        </Card>
+                        <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20, elevation: 5 }}>
+                            <Card.Title
+                                left={(props) => <Image
+                                    {...props}
+                                    style={styles.logo}
+                                    source={require('../Images/cardimg-02.png')}
+                                />}
+                                right={(props) => <TouchableWithoutFeedback
+                                    {...props}
+                                // onPress={() => navigation.navigate('ForgetPassword')}
+                                >
+                                    <View style={styles.button1}>
+                                        <Text style={styles.text1}>
+                                            Tutorial Videos
+                                        </Text>
+                                    </View>
+                                </TouchableWithoutFeedback>}
+                            />
+                        </Card>
+                        <Card style={{ backgroundColor: "#FFFFFF", height: 65, marginTop: 20, elevation: 5 }}>
+                            <Card.Title
+                                left={(props) => <Image
+                                    {...props}
+                                    style={styles.logo}
+                                    source={require('../Images/cardimg-03.png')}
+                                />}
+                                right={(props) => <TouchableWithoutFeedback
+                                    {...props}
+                                // onPress={() => navigation.navigate('ForgetPassword')}
+                                >
+                                    <View style={styles.button2}>
+                                        <Text style={styles.text2}>
+                                            Support
+                                        </Text>
+                                    </View>
+                                </TouchableWithoutFeedback>}
+                            />
+                        </Card>
+                    </View>}
             </View>
         </View>
     )
 }
-export default CustomerPayment;
+export default Invoice;
 
 const styles = StyleSheet.create({
     contanier: {
@@ -66,8 +170,33 @@ const styles = StyleSheet.create({
     },
     logo: {
         width: 87,
-        height: 64,
-        marginBottom: 50,
-        marginTop: 30,
+        height: 55,
+    },
+    button: {
+        fontWeight: "bold",
+        marginRight: 65,
+    },
+    text: {
+        color: '#0074DD',
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    button1: {
+        fontWeight: "bold",
+        marginRight: 140,
+    },
+    text1: {
+        color: '#0074DD',
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    button2: {
+        fontWeight: "bold",
+        marginRight: 190,
+    },
+    text2: {
+        color: '#0074DD',
+        fontSize: 16,
+        fontWeight: "bold",
     },
 })

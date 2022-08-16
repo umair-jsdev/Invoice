@@ -35,7 +35,7 @@ function Login({ navigation }) {
                     </View>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('Invoice')}
                 >
                     <View style={styles.loginbutton}>
                         <Text style={styles.logintext}>
