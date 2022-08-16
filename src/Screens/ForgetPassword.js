@@ -6,29 +6,29 @@ import Input from '../Components/Input';
 
 function ForgetPassword({ navigation }) {
   return (
-      <View style={styles.contanier}>
-        <Image
-          style={styles.logo}
-          source={require('../Images/img-03.png')}
-        />
-        <Heading title="Forget Password" />
-        <View style={styles.head}>
-          <Caption title="Please enter your email here we will send you code to reset your password." />
+    <View style={styles.contanier}>
+      <Image
+        style={styles.logo}
+        source={require('../Images/img-03.png')}
+      />
+      <Heading title="Forget Password" />
+      <View style={styles.head}>
+        <Caption title="Please enter your email here we will send you code to reset your password." />
+      </View>
+      <Input
+        label="Your e-mail address"
+        placeholder="Your e-mail address"
+        autoCapitalize="none" />
+      <TouchableWithoutFeedback
+      // onPress={() => navigation.navigate('ForgetPassword')}
+      >
+        <View style={styles.loginbutton}>
+          <Text style={styles.logintext}>
+            Send Email
+          </Text>
         </View>
-        <Input
-          label="Your e-mail address"
-          placeholder="Your e-mail address"
-          autoCapitalize="none" />
-        <TouchableWithoutFeedback
-        // onPress={() => navigation.navigate('ForgetPassword')}
-        >
-          <View style={styles.loginbutton}>
-            <Text style={styles.logintext}>
-              Send Email
-            </Text>
-          </View>
-        </TouchableWithoutFeedback>
-      </View >
+      </TouchableWithoutFeedback>
+    </View >
   )
 }
 

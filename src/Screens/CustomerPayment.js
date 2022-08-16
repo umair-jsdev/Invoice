@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, ScrollView, View, Switch, Image } from 'react-native';
+import { StyleSheet, Text, View, Switch, Image } from 'react-native';
 import { Card, Divider } from 'react-native-paper';
 
 const CustomerPayment = () => {
@@ -7,26 +7,30 @@ const CustomerPayment = () => {
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.contanier}>
-      <Divider />
-      <View style={styles.padding}>
-        <View style={styles.switch}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Accept Credit Card Payment
-          </Text>
+      <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{
+          fontSize: 14,
+          color: "#5C5C5C",
+          fontWeight: "bold",
+          margin: 15
+
+        }}>
+          Accept Credit Card Payment
+        </Text>
+        <Text style={{
+          margin: 15,
+          marginLeft: 120
+        }}>
           <Switch
             trackColor={{ false: "#767577", true: "#17A100" }}
             thumbColor={isEnabled ? "#ffff" : "#f4f3f4"}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
-        </View>
+        </Text>
       </View>
-      <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
+      <Divider style={{ borderColor: "#969696", borderWidth: 0.5, width: "100%" }} />
       <Card style={{ backgroundColor: "#F1F6F9", height: 55, }}>
         <Card.Content>
           <Text style={{
@@ -34,59 +38,58 @@ const CustomerPayment = () => {
             color: "#5C5C5C",
             fontFamily: "Roboto-Medium",
             fontWeight: "bold",
-            marginLeft: 5
           }}
           >Payment Method
           </Text>
         </Card.Content>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
       </Card>
-      <View style={styles.padding}>
-        <View style={styles.switch}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Accept Creadit Card
-          </Text>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            marginBottom: 5
-          }}>
-            See available countries and fees
-          </Text>
+      <Divider style={{ borderColor: "#969696", borderWidth: 0.5, width: "100%" }} />
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{
+          fontSize: 14,
+          color: "#5C5C5C",
+          fontWeight: "bold",
+          margin: 15
+
+        }}>
+          Accept Creadit Card
+        </Text>
+        <Text style={{
+          margin: 15,
+          marginLeft: 175
+        }}>
           <Switch
             trackColor={{ false: "#767577", true: "#17A100" }}
             thumbColor={isEnabled ? "#ffff" : "#f4f3f4"}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
-        </View>
+        </Text>
       </View>
-      <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-      <View style={styles.padding}>
-        <View style={styles.switch}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Accept PayPal
-          </Text>
+      <Divider style={{ borderColor: "#969696", borderWidth: 0.5, width: "100%" }} />
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{
+          fontSize: 14,
+          color: "#5C5C5C",
+          fontWeight: "bold",
+          margin: 15
+
+        }}>
+          Accept Paypal
+        </Text>
+        <Text style={{
+          margin: 15,
+          marginLeft: 210
+        }}>
           <Switch
             trackColor={{ false: "#767577", true: "#17A100" }}
             thumbColor={isEnabled ? "#ffff" : "#f4f3f4"}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
-        </View>
+        </Text>
       </View>
-      <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
+      <Divider style={{ borderColor: "#969696", borderWidth: 0.5, width: "100%" }} />
       <Card style={{ backgroundColor: "#F1F6F9", height: 55, }}>
         <Card.Content>
           <Text style={{
@@ -94,39 +97,34 @@ const CustomerPayment = () => {
             color: "#5C5C5C",
             fontFamily: "Roboto-Medium",
             fontWeight: "bold",
-            marginLeft: 5
           }}
           >Surcharge
           </Text>
         </Card.Content>
         <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
       </Card>
-      <View style={styles.padding}>
-        <View style={styles.switch}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Imposing surcharge to your
-          </Text>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            marginBottom: 5
-          }}>
-            customers available
-          </Text>
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{
+          fontSize: 14,
+          color: "#5C5C5C",
+          fontWeight: "bold",
+          marginLeft: 15,
+          marginTop: 15,
+        }}>
+          Imposing surcharge to your customers available
+        </Text>
+        <Text style={{
+          margin: 10
+        }}>
           <Switch
             trackColor={{ false: "#767577", true: "#17A100" }}
             thumbColor={isEnabled ? "#ffff" : "#f4f3f4"}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
-        </View>
+        </Text>
       </View>
+      <Divider style={{ borderColor: "#969696", marginTop: 10, borderWidth: 0.5, width: "100%" }} />
       <Image
         style={styles.icon}
         source={require('../Images/icon-02.png')}
@@ -149,11 +147,7 @@ const styles = StyleSheet.create({
     width: 145,
     height: 40,
     marginBottom: 20,
-    marginTop: 20,
+    marginTop: 40,
     marginLeft: 120
   },
-  // switch: {
-  //   flex: 1 ,
-  //   flexDirection: "column"
-  // },
 })

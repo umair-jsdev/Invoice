@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableWithoutFeedback, ScrollView, } from 'r
 import { Card } from 'react-native-paper';
 // import Icon from 'react-native-vector-icons/MaterialIcons'
 
-const Setting = () => {
+const Setting = ({ navigation }) => {
     return (
         <ScrollView>
             <View style={styles.contanier}>
@@ -14,7 +14,7 @@ const Setting = () => {
                     </Card.Content>
                 </Card>
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('UserAccount')}
                 >
                     <View style={styles.button}>
                         <Text style={styles.text}>
@@ -37,7 +37,7 @@ const Setting = () => {
                     </Card.Content>
                 </Card>
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                onPress={() => navigation.navigate('Logo')}
                 >
                     <View style={styles.button}>
                         <Text style={styles.text}>
@@ -47,7 +47,7 @@ const Setting = () => {
                     </View>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('CompanyInformation')}
                 >
                     <View style={styles.button}>
                         <Text style={styles.text}>
@@ -67,7 +67,7 @@ const Setting = () => {
                     </View>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('PaymentInstruction')}
                 >
                     <View style={styles.button}>
                         <Text style={styles.text}>
@@ -77,7 +77,7 @@ const Setting = () => {
                     </View>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback
-                // onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('CustomerPayment')}
                 >
                     <View style={styles.button}>
                         <Text style={styles.text}>
@@ -265,7 +265,7 @@ const Setting = () => {
     )
 }
 
-export default Setting ; 
+export default Setting;
 
 const styles = StyleSheet.create({
     contanier: {

@@ -1,18 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
-import { Card, Divider } from 'react-native-paper';
+import { Divider } from 'react-native-paper';
 import Input from '../Components/Input';
 
-
-
-function UserAccount() {
+function UserAccount({ navigation }) {
   return (
     <>
       <View style={styles.contanier}>
-        {/* <View style={styles.head}>
-          <CardHeading title="User Account" />
-        </View> */}
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.9, width: "100%" }} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.9, width: "100%" }} />
         <View style={styles.padding}>
           <Text style={{ fontSize: 11, color: "#000000", fontFamily: "Roboto-Medium", marginBottom: 5 }}>USERNAME</Text>
           <Text style={{ fontSize: 14, color: "#000000", fontFamily: "Roboto-Medium", marginBottom: 50, fontWeight: "bold" }}>JohnKhan393@gmail.com</Text>
@@ -28,7 +23,7 @@ function UserAccount() {
           autoCapitalize="none"
           editable={false} />
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate('')}
+          onPress={() => navigation.navigate('ForgetPassword')}
         >
           <View style={styles.button}>
             <Text style={styles.text}>

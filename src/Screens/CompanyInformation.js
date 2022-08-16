@@ -1,64 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, ScrollView, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, TextInput, ScrollView, View, Text } from 'react-native';
 import { Card, Divider } from 'react-native-paper';
+import { Picker } from '@react-native-picker/picker';
 
 function CompanyInformation() {
+  const [selectedLanguage, setSelectedLanguage] = useState();
   return (
     <ScrollView>
       <View style={styles.contanier}>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.9, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 11,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            marginBottom: 5
-          }}>
-            Company Name
-          </Text>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >TrendyTech Pro
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Email address on the invoice
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Phone Number
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Additional information
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.9, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15, margiTop: 20 }}>Company Name</Text>
+        <TextInput style={styles.input}
+          value="TrendyTech Pro" />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Email address on the invoice</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Phone Number</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Additional information</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.9, width: "100%" }} />
         <Card style={{ backgroundColor: "#F1F6F9", height: 55, }}>
           <Card.Content>
             <Text style={{
@@ -66,35 +29,19 @@ function CompanyInformation() {
               color: "#5C5C5C",
               fontFamily: "Roboto-Medium",
               fontWeight: "bold",
-              marginLeft: 5
             }}
             >Business Number
             </Text>
           </Card.Content>
-          <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
         </Card>
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Abbrevation
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Business Number
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.9, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15, margiTop: 20 }}>Abbrevation</Text>
+        <TextInput style={styles.input}
+          value="Tax Reg No. " />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Business Number</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.9, width: "100%" }} />
         <Card style={{ backgroundColor: "#F1F6F9", height: 55, }}>
           <Card.Content>
             <Text style={{
@@ -102,56 +49,37 @@ function CompanyInformation() {
               color: "#5C5C5C",
               fontFamily: "Roboto-Medium",
               fontWeight: "bold",
-              marginLeft: 5
             }}
             >Address
             </Text>
           </Card.Content>
-          <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
         </Card>
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Address 1
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Address 2
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >City                                                           State
-          </Text>
-        </View>
-        <Divider style={{ borderColor: "#969696", marginTop: 20, borderWidth: 0.5, width: "100%" }} />
-        <View style={styles.padding}>
-          <Text style={{
-            fontSize: 14,
-            color: "#757575",
-            fontFamily: "Roboto-Medium",
-            fontWeight: "bold"
-          }}
-          >Zip                                                           Country
-          </Text>
-        </View>
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.9, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Address 1</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Address 2</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>City</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>State</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Zip Code</Text>
+        <TextInput style={styles.input} />
+        <Divider style={{ borderColor: "#969696", borderWidth: 0.7, width: "100%" }} />
+        <Text style={{ fontSize: 14, color: "#000000", marginLeft: 15 }}>Country</Text>
+        <Picker
+          selectedValue={selectedLanguage}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedLanguage(itemValue)
+          }>
+          <Picker.Item label="Pakistan" value="1" />
+          <Picker.Item label="Afghanistan" value="2" />
+          <Picker.Item label="Japan" value="3" />
+        </Picker>
       </View>
     </ScrollView>
   )
@@ -163,9 +91,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FAFBFD",
   },
-  padding: {
-    alignItems: "flex-start",
-    margin: 20,
-    marginTop: 20,
+  input: {
+    marginLeft: 10,
   },
 })

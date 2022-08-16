@@ -7,54 +7,52 @@ import Input from '../Components/Input';
 
 function Login({ navigation }) {
     return (
-        <ScrollView>
-            <View style={styles.contanier}>
-                <Image
-                    style={styles.logo}
-                    source={require('../Images/img-02.png')}
-                />
-                <View style={styles.head}>
-                    <Heading title="LogIn" />
+        <View style={styles.contanier}>
+            <Image
+                style={styles.logo}
+                source={require('../Images/img-02.png')}
+            />
+            <View style={styles.head}>
+                <Heading title="LogIn" />
+            </View>
+            <Input
+                label="E-mail"
+                placeholder="E-mail"
+                autoCapitalize="none" />
+            <IconInput
+                label="Password"
+                placeholder="********"
+                autoCapitalize="none"
+                secureTextEntry />
+            <TouchableWithoutFeedback
+                onPress={() => navigation.navigate('ForgetPassword')}
+            >
+                <View style={styles.button}>
+                    <Text style={styles.text}>
+                        Forget Password ?
+                    </Text>
                 </View>
-                <Input
-                    label="E-mail"
-                    placeholder="E-mail"
-                    autoCapitalize="none" />
-                <IconInput
-                    label="Password"
-                    placeholder="********"
-                    autoCapitalize="none"
-                    secureTextEntry />
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+                onPress={() => navigation.navigate('Invoice')}
+            >
+                <View style={styles.loginbutton}>
+                    <Text style={styles.logintext}>
+                        LogIn
+                    </Text>
+                </View>
+            </TouchableWithoutFeedback>
+            <View style={styles.direction} >
+                <Captiontwo title="Don’t have an account?" />
                 <TouchableWithoutFeedback
-                    onPress={() => navigation.navigate('ForgetPassword')}
+                    onPress={() => navigation.navigate('Signup')}
                 >
-                    <View style={styles.button}>
-                        <Text style={styles.text}>
-                            Forget Password ?
-                        </Text>
+                    <View style={{marginBottom: 20}}>
+                        <Captiontwo title="SignUp" />
                     </View>
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback
-                    onPress={() => navigation.navigate('Invoice')}
-                >
-                    <View style={styles.loginbutton}>
-                        <Text style={styles.logintext}>
-                            LogIn
-                        </Text>
-                    </View>
-                </TouchableWithoutFeedback>
-                <View style={styles.direction} >
-                    <Captiontwo title="Don’t have an account?" />
-                    <TouchableWithoutFeedback
-                        onPress={() => navigation.navigate('Signup')}
-                    >
-                        <View>
-                            <Captiontwo title="SignUp" />
-                        </View>
-                    </TouchableWithoutFeedback>
-                </View>
-            </View >
-        </ScrollView>
+            </View>
+        </View >
     )
 }
 
@@ -68,8 +66,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#FAFBFD",
     },
     logo: {
-        width: 320,
-        height: 350,
+        width: 199,
+        height: 205,
         marginBottom: 50,
         marginTop: 30,
     },

@@ -6,7 +6,7 @@ import Heading from "../Components/Heading";
 
 
 
-const Invoice = ({navigation}) => {
+const Invoice = ({ navigation }) => {
     const [show, setShow] = useState(false);
     return (
         <View style={styles.contanier}>
@@ -47,7 +47,7 @@ const Invoice = ({navigation}) => {
                                 />}
                                 right={(props) => <TouchableWithoutFeedback
                                     {...props}
-                                onPress={() => navigation.navigate('Setting')}
+                                    onPress={() => navigation.navigate('Setting')}
                                 >
                                     <View style={styles.button}>
                                         <Text style={styles.text}>
@@ -66,7 +66,7 @@ const Invoice = ({navigation}) => {
                                 />}
                                 right={(props) => <TouchableWithoutFeedback
                                     {...props}
-                                // onPress={() => navigation.navigate('ForgetPassword')}
+                                    onPress={() => navigation.navigate('TutorialVideos')}
                                 >
                                     <View style={styles.button1}>
                                         <Text style={styles.text1}>
@@ -127,7 +127,6 @@ const Invoice = ({navigation}) => {
                                 />}
                                 right={(props) => <TouchableWithoutFeedback
                                     {...props}
-                                // onPress={() => navigation.navigate('ForgetPassword')}
                                 >
                                     <View style={styles.button1}>
                                         <Text style={styles.text1}>
@@ -156,6 +155,14 @@ const Invoice = ({navigation}) => {
                                 </TouchableWithoutFeedback>}
                             />
                         </Card>
+                        <View style={styles.img2}>
+                            <Image
+                                style={styles.img1}
+                                source={require('../Images/img-06.png')}
+                            />
+                            <Text style={{ fontSize: 18, color: "#6F6F6F", fontWeight: "bold", marginTop: 20 }}>It’s empty</Text>
+                            <Text style={{ fontSize: 16, color: "#6F6F6F", marginTop: 20 }}>Tap on + button to add a document</Text>
+                        </View>
                     </View>}
             </View>
         </View>
@@ -171,6 +178,15 @@ const styles = StyleSheet.create({
     logo: {
         width: 87,
         height: 55,
+    },
+    img1: {
+        width: 125,
+        height: 110,
+    },
+    img2: {
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 30
     },
     button: {
         fontWeight: "bold",
